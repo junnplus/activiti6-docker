@@ -7,7 +7,7 @@
 $ docker run --name activiti6 -d -p 8080:8080 junnplus/activiti6
 ```
 you can customise using the following environment variables:
-- `DB` The database type, Option h2 / mysql, default to `h2`.
+- `DB` The database type, option h2 / mysql, default to `h2`.
 - `DB_DRIVER` The database  driver for jdbc, default to `org.h2.Driver`.
 - `DB_URL` The database url for jdbc, default to`jdbc:h2:/tmp/activiti6;AUTO_SERVER=TRUE`.
 - `DB_USERNAME` The database username, default to `sa`.
@@ -22,7 +22,7 @@ services:
     activiti6:
         image: junnplus/activiti6
         ports:
-            - "9090:8080"
+            - "8080:8080"
         environment:
             - "DB=mysql"
             - "DB_DRIVER=com.mysql.jdbc.Driver"
