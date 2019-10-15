@@ -45,3 +45,5 @@ services:
             - "MYSQL_ROOT_PASSWORD=activiti6"
         restart: always
 ```
+### Accessing
+you can access the activiti6 app on `http://localhost:8080`.
