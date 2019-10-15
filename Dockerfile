@@ -16,7 +16,10 @@ RUN wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${M
         cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}.jar ${CATALINA_HOME}/webapps/activiti-rest/WEB-INF/lib/ && \
         rm -rf /tmp/mysql-connector-java*
 
+RUN rm -rf ${CATALINA_HOME}/webapps/docs ${CATALINA_HOME}/webapps/examples
+
 ADD . /tmp/activiti6
 RUN cp /tmp/activiti6/config/context.xml ${CATALINA_HOME}/webapps/manager/META-INF/
+RUN cp /tmp/activiti6/config/index.jsp ${CATALINA_HOME}/webapps/ROOT/
 
 CMD ["/tmp/activiti6/start.sh"]
